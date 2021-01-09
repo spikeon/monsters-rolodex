@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6f7c64e-74b2-47e5-a8cd-93d863a70170" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/card-list/card-list.component.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/card-list/card-list.styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/card/card.component.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/card/card.styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search-box/search-box.component.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search-box/search-box.styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +64,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610162726211</updated>
-      <workItem from="1610162727307" duration="9040000" />
+      <workItem from="1610162727307" duration="9898000" />
     </task>
+    <task id="LOCAL-00001" summary="Taking class.">
+      <created>1610235519748</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610235519748</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,5 +89,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Taking class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Taking class." />
   </component>
 </project>
