@@ -1,14 +1,13 @@
 import React from 'react';
-import "./card-list.styles.css";
 import {Card} from "../card/card.component";
+import {CardListContainer} from './card-list.styles';
 
-export const CardList = props => (
-    <div className="card-list">
+export const CardList = ({monsters}) => (
+    <CardListContainer>
         {
-            props.monsters.map(monster =>
+            monsters.map(monster =>
                 <Card key={monster.id} monster={monster}/>
             )
         }
-
-    </div>
+    </CardListContainer>
 );

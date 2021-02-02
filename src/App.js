@@ -1,58 +1,45 @@
-import './App.css';
-import {Component} from "react/cjs/react.production.min";
+import React, {useState, useEffect} from 'react';
 import {CardList} from "./components/card-list/card-list.component";
 import {SearchBox} from "./components/search-box/search-box.component";
+import {AppContainer, AppTitle} from './App.styles';
 
-class App extends Component {
+const App = () => {
+    const [search, setSearch] = useState("");
+    const [monsters, setMonsters] = useState([]);
+    const [filteredMonsters, setFilteredMonsters] = useState([]);
 
-    constructor() {
-        super();
+    useEffect(() => {
+        const fetchMonsters = async () => {
+            const response = await fetch('https://jsonplaceholder.typicode.com/users');
+            const responseMonsters = await response.json();
+            setMonsters(responseMonsters);
+        }
+        fetchMonsters();
+    }, [setMonsters]);
 
-        this.state = {
-            search : "",
-            monsters: []
-        };
+    useEffect(() => {
+        const filterMonsters = monster => {
+            const name = monster.name.toLowerCase();
+            const email = monster.email.toLowerCase();
 
-        // Alternate binding method
-        // this.handleSearchChange2 = this.handleSearchChange2.bind(this);
-    }
+            return name.includes(search) || email.includes(search);
+        }
 
-    componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(monsters => this.setState({monsters}))
-    }
+        setFilteredMonsters(monsters.filter(filterMonsters))
+    }, [search, monsters])
 
-    handleSearchChange = (search) => {
-        this.setState({search});
-    }
 
-    // Alternate binding method
-    // handleSearchChange2(search) {...}
+    return (
+        <AppContainer>
+            <AppTitle>Monsters Rolodex</AppTitle>
+            <SearchBox
+                placeholder="search monsters"
+                handleSearchChange={(search) => setSearch(search.toLowerCase())}
+            />
+            <CardList monsters={filteredMonsters}/>
+        </AppContainer>
+    );
 
-    filterMonsters = monster => {
-        const search = this.state.search.toLowerCase();
-        const name = monster.name.toLowerCase();
-        const email = monster.email.toLowerCase();
-
-        return name.includes(search) || email.includes(search);
-    }
-
-    render() {
-        const {monsters} = this.state;
-        const filteredMonsters = monsters.filter(this.filterMonsters);
-
-        return (
-            <div className="App">
-                <h1>Monsters Rolodex</h1>
-                <SearchBox
-                    placeholder="search monsters"
-                    handleSearchChange={this.handleSearchChange}
-                />
-                <CardList monsters={filteredMonsters}/>
-            </div>
-        );
-    }
 }
 
 export default App;
